@@ -11,8 +11,14 @@
   <header class="navbar navbar-static-top navbar-inverse">
     <div class="navbar-inner">
         <ul class="nav navbar-nav">
+          <li><a href="/">Home</a></li>
           <li><a href="/posts">View All Lip-Sync Battles</a></li>
           <li><a href="/posts/new">Post some LINX</a></li>
+          <li class="search"><%= form_tag("/posts", method: "get") do %>
+            <%= text_field_tag(:criteria, nil, :placeholder => 'Search') %>
+            <%= submit_tag("Search") %>
+          <% end %></li>
+
         </ul>
     </div>
   </header>

@@ -1,7 +1,24 @@
+
 <h1>Posts</h1>
+
+
+  <%= form_tag("/posts", method: "get") do %>
+    <%= label_tag(:criteria, "Search for:") %>
+    <%= text_field_tag(:criteria) %>
+    <%= submit_tag("Search") %>
+  <% end %>
 
 <ul>
   <% @posts.each do |post| %>
     <li><%= link_to post.title, post_path(post) %></li>
   <% end %>
 </ul>
+
+<h3>Search Results</h3>
+<% if @results.any? %>
+  <ul>
+    <% @results.each do |result| %>
+      <li><%= link_to result.title, post_path(result) %></li>
+    <% end %>
+  </ul>
+<% end %>

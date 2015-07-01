@@ -11,6 +11,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'quiet_assets'
+gem 'textacular', '~> 3.0'
 
 
 group :development, :test do
