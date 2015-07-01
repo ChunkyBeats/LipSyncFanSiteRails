@@ -1,0 +1,11 @@
+<h1><%= @post.title %></h1>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @post.video_url %>"  frameborder="0" allowfullscreen></iframe>
+
+<div class="container">
+  <h3>Comments</h3>
+  <% @post.comments.each do |comment| %>
+    <li><%= comment.description %> By: <%= comment.user_name %></li>
+  <% end %>
+</div>
+  <%= link_to "Add a Comment", new_post_comment_path(@post) %>
