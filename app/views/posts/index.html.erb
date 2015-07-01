@@ -2,23 +2,22 @@
 <h1>Posts</h1>
 
 
-  <%= form_tag("/posts", method: "get") do %>
-    <%= label_tag(:criteria, "Search for:") %>
-    <%= text_field_tag(:criteria) %>
-    <%= submit_tag("Search") %>
-  <% end %>
 
+<div class="col-sm-8">
 <ul>
   <% @posts.each do |post| %>
     <li><%= link_to post.title, post_path(post) %></li>
   <% end %>
 </ul>
+</div>
 
-<h3>Search Results</h3>
+<div class="col-sm-4">
 <% if @results.any? %>
+  <h3>Search Results</h3>
   <ul>
     <% @results.each do |result| %>
       <li><%= link_to result.title, post_path(result) %></li>
     <% end %>
   </ul>
 <% end %>
+</div>
